@@ -10,35 +10,34 @@
     <link rel="stylesheet" href="index.css">
     <title>Luis Bootstrap demo</title>
   </head>
-  <body>
-    
+  <body data-spy="scroll" data-target="#navbar" data-offset="57">
     <!--Header-->
-    <nav id="header" class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav id="header" class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
       <div class="container">
         <a class="navbar-brand" href="#">
           <img src="assets/images/platzi-logo.png">
           Conf Mexico
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
       
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="collapse navbar-collapse" id="navbar">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">La conferencia</span></a>
+            <li class="nav-item">
+              <a class="nav-link" href="#main">La conferencia</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Los oradores</a>
+              <a class="nav-link" href="#speakers">Los oradores</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">El lugar y la fecha</a>
+              <a class="nav-link" href="#place-time">El lugar y la fecha</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Conviertete en orador</a>
+              <a class="nav-link" href="#conviertete-en-orador">Conviertete en orador</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-platzi" href="#">Comprar Tickets</a>
+              <a class="nav-link text-platzi" href="#" data-toggle="modal" data-target="#modalCompra">Comprar Tickets</a>
             </li>
           </ul>
         </div>
@@ -71,7 +70,7 @@
 
                   </p>
                   <a href="#" class="btn btn-outline-light">Quiero ser orador</a>
-                  <button type="button" class="btn btn-platzi">Comprar Tickets</button>
+                  <button type="button" class="btn btn-platzi" data-toggle="modal" data-target="#modalCompra">Comprar Tickets</button>
                 </div>
               </div>
             </div>
@@ -155,8 +154,6 @@
     </section>
     <!--/Event Date and Time-->
 
-
-
     <!-- Convierte en Orador -->
     <section id="conviertete-en-orador"class="pt-4 pb-4">
       <div class="container">
@@ -235,6 +232,67 @@
       </div>
     </footer>
     <!-- /Footer -->
+    <!-- Modal -->
+    <!-- Modal -->
+    <div class="modal fade" id="modalCompra" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Comprar Tickets</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form class="was-validated">
+              <div class="form-row">
+                <div class="col form-group">
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="basic-addon1">@</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                    <div class="invalid-feedback">
+                      Tu Username es incorrecto, ingrésalo nuevamente
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col form-group">
+                  <label class="text-platzi-modal" for="inputPassword5">Password</label>
+                  <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock" placeholder="Password">
+                  <div class="invalid-feedback">
+                    Tu passwaor es incorrecto
+                  </div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col form-group">
+                  <div class="form-check">
+                    <div class="custom-control custom-checkbox mb-3">
+                      <input type="checkbox" class="custom-control-input" id="customControlValidation1" required>
+                      <label class="custom-control-label" for="customControlValidation1">Acepto los términos y condicones del sorteo</label>
+                      <div class="invalid-feedback">  Debes aceptar los términos y condiciones para acceder al sorteo.</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+            <div class="alert alert-success" role="alert">
+              Recibirás un correo de confirmación si sales sorteado.
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancerlar</button>
+            <button type="button" class="btn btn-platzi">Comprar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- /Modal -->
+    
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
